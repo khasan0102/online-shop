@@ -1,15 +1,10 @@
 <%- include('../parts/header')  %> 
    <section class="admin">
-      <section class="site-main d-flex align-items-center flex-column ">
+      <section class="site-main d-flex align-items-center flex-column" style="position: fixed;">
            <h1 class="heading py-4"><img src="/images/logo.svg" alt="logo" > Dashboard Orgo</h1>
 
            <nav class="mt-3 w-100 ">
               <ul class="list-group">
-               <li class="admin-item px-4 py-3 border-bottom ">
-                  <a href="/admin/users">
-                     <i class="fas fa-user-tie"></i> Users
-                  </a>
-               </li>
                <li class="admin-item px-4 py-3 border-bottom">
                   <a href="/admin/products">
                      <i class="fab fa-product-hunt"></i> Products
@@ -24,7 +19,7 @@
            </nav>
       </section>
 
-      <main class="admin-main" style="position: relative;">
+      <main class="admin-main" style="position: relative; margin-left: 20vw;" >
           <header class="d-flex px-3 border-bottom border-light py-2">
              <h2>Add Product</h2>
 
@@ -55,7 +50,7 @@
                   <option value="1">Apple</option>
                   <option value="2">Samsung</option>
                   <option value="3">Xiaomi</option>
-                  <option value="3">Kitoblar</option>
+                  <option value="4">Kitoblar</option>
                </select>
              </div>
                 <button class="btn btn-primary w-100">Add</button>

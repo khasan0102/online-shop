@@ -236,7 +236,7 @@ deleteEl.onclick = async () => {
    });
 
    let {data: { deleteProduct }} = await response.json();
-   if(deleteProduct.status === 201) {
+   if(deleteProduct?.status === 201) {
        window.location.reload();
    }
 }

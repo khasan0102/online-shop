@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-router.get('/exit', (request, response) => {
+router.get('/', (request, response) => {
     response.clearCookie('token').redirect('/login');
 })
 

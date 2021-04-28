@@ -2,7 +2,8 @@ let productsBox = document.querySelector("#products-box");
 let all = document.querySelector("#all");
 let categoriesItems = document.querySelectorAll('.categories-item');
 let cartCount = document.querySelector("#cart-count");
-console.log(cartCount)
+let wishListBtn = document.querySelector('#wishlist');
+
 async function  getProducts (event) {
     productsBox.innerHTML = null
     let div = document.createElement('div');
@@ -195,4 +196,10 @@ for(let el of categoriesItems) {
         renderProducts(categoryProducts, productsBox);
        }
     }
+}
+
+
+wishListBtn.onclick = () => {
+    let wishlist = JSON.parse(window.localStorage.getItem('wishlist')) || [];
+    renderProducts(wishlist, productsBox);
 }

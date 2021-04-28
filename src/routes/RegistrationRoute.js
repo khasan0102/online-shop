@@ -3,6 +3,7 @@ const Joi = require('joi');
 const { generateCrypt } = require("../modules/bcrypt");
 const { makeUser } = require("../models/UserModel");
 const { generateToken } = require("../modules/jwt");
+
 const RegistrationValidation = new Joi.object({
    email: Joi.string()
              .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
@@ -31,12 +32,11 @@ router.post("/", async (request, response) => {
            id: user._id,
            fullName: user.full_name,
            email: user.email,
-           phoneNumber: user.phone_number 
+           phoneNumber: user.phone_number
        };
        token = generateToken(token);
        response.cookie('token', token).redirect('/');
    } catch (e) {
-       console.log(e)
        if((e + '').includes("duplicate key")){
         e = 'Phone or username is not available'
        }

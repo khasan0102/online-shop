@@ -14,16 +14,16 @@ const OrderSchema = new Schema({
         type: Number,
         required: true
     },
-    all_price: {
+    allPrice: {
         type: Number,
         required: true
     },
-    product_id: {
+    imgPath: {
+        type: String
+    },
+    productId: {
         type: String,
         required: true
-    },
-    user_id: {
-        type: String
     }
 });
 
@@ -76,7 +76,7 @@ async function getUsers() {
 
 async function addOrder(id, orders){
     let db = await UserModel();
-    return await db.updateOne({_id: id}, {orders})
+    return await db.updateMany({_id: id}, {orders})
 }
 module.exports = {
     makeUser, findUser,

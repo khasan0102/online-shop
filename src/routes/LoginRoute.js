@@ -32,15 +32,14 @@ router.post("/", async (request, response) => {
        let isTrust = checkCrypt(data.password, user.password);
        if(!isTrust) throw new Error('Password incored');
        let token = {
-        id: user._id,
-        fullName: user.full_name,
-        email: user.email,
-        phoneNumber: user.phone_number 
+         id: user._id,
+         fullName: user.full_name,
+         email: user.email,
+         phoneNumber: user.phone_number
        };
        token = generateToken(token);
        response.cookie('token', token).redirect('/');
    } catch (e) {
-       console.log(e)
        if((e + '').includes("ValidationError")) {
          e = (e + '').slice(16);
        }
