@@ -1,0 +1,38 @@
+<%- include('../parts/header')  %> 
+   <section class="d-flex admin">
+      <section class="site-main d-flex align-items-center flex-column ">
+           <h1 class="heading py-4"><img src="/images/logo.svg" alt="logo" > Dashboard Orgo</h1>
+
+           <nav class="mt-3 w-100 ">
+              <ul class="list-group">
+               <li class="admin-item px-4 py-3 border-bottom ">
+                  <a href="/admin/users">
+                     <i class="fas fa-user-tie"></i> Users
+                  </a>
+               </li>
+               <li class="admin-item px-4 py-3 border-bottom">
+                  <a href="/admin/products">
+                     <i class="fab fa-product-hunt"></i> Products
+                  </a>
+               </li>
+               <li class="admin-item px-4 py-3 border-bottom">
+                  <a href="/admin/addproduct">
+                     <i class="fas fa-plus"></i> Add Product
+                  </a>
+               </li>
+              </ul>
+           </nav>
+      </section>
+
+      <main class="admin-main">
+          <header class="d-flex px-3 border-bottom border-light py-2">
+             <h2>Users</h2>
+
+             <div class="admin-box d-flex align-items-center ">
+                <h5 class="mx-3">Admin</h5>
+                <img src="/images/avatar2.png" alt="" width="50" height="50" style="border-radius: 50%;">
+             </div>
+          </header>
+      </main>
+   </section>
+<%- include('../parts/footer')  %> 

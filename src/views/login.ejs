@@ -1,0 +1,33 @@
+<%- include('parts/header') %> 
+<% var email, admin, error %> 
+<section class="login-area ptb-100">
+    <div class="container">
+        <div class="login-form">
+            <h2>Login <%= admin %> </h2>
+             <% if (error) { %>
+              <div class="alert alert-danger">
+                  
+                      <%= error %> 
+              </div>
+             <% } %>
+            <form method="POST">
+                <div class="form-group">
+                    <label>Login </label>
+                    <input type="text" class="form-control" placeholder="Phone <%= email %>" name="login" required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password" required autocomplete="off">
+                </div>
+                <button type="submit" class="default-btn">Login</button>
+                <% if(email) {%> 
+                    <a href="/signup" class=" default-btn mt-2 d-block text-center" style="margin-left: auto;">Registration</a>
+                <% } %>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- End Login Area -->
+
+<%- include('parts/footer') %> 
