@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require('fs');
 const cookieParser = require("cookie-parser");
 const modules = require('./Graphql');
+const favicon = require("serve-favicon");
 async function startApolloServer() {
     
 
@@ -21,6 +22,7 @@ async function startApolloServer() {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     app.use(cookieParser());
+    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
     
 
